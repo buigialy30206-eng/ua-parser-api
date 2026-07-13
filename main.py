@@ -31,9 +31,6 @@ async def _rate_limit(request):
 app = FastAPI(title="User Agent Parser API", version="1.0.0", dependencies=[Depends(_rate_limit)])
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-@app.api_route("/health", methods=["GET", "HEAD"])
-async def health():
-    return {"status": "ok"}
 
 
 
@@ -69,9 +66,6 @@ OS_PATTERNS = [
 ]
 
 
-@app.api_route("/health", methods=["GET", "HEAD"])
-async def health():
-    return {"status": "ok"}
 
 
 @app.get("/")
