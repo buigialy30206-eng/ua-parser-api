@@ -14,6 +14,10 @@ from pydantic import BaseModel
 app = FastAPI(title="User Agent Parser API", version="1.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
+@app.api_route("/health", methods=["GET", "HEAD"])
+async def health():
+    return {"status": "ok"}
+
 class UAResult(BaseModel):
     browser: str = "Unknown"
     browser_version: str = ""
