@@ -50,7 +50,7 @@ OS_PATTERNS = [
 
 @app.get("/")
 async def root():
-    return {"service": "User Agent Parser API", "version": "1.0.0"}
+    return {"service": "User Agent Parser API", "version": "1.0.0", "related": ["IP Geolocation API"]}
 
 @app.get("/parse", response_model=UAResult)
 async def parse(ua: str = Query(..., description="User-Agent string to parse")):
