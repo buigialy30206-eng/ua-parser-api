@@ -7,7 +7,7 @@ Pure Python, no external APIs.
 import re
 from typing import Optional
 
-from fastapi import Query
+from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
